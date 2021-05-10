@@ -39,7 +39,11 @@
           </div>
         </el-aside>
 
-        <router-view></router-view>
+        <el-scrollbar style="height: 100%;">
+
+          <router-view></router-view>
+
+        </el-scrollbar>
 
       </el-container>
     </el-container>
@@ -81,7 +85,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
 .el-header {
   background-color: #0078d5;
   color: white;
