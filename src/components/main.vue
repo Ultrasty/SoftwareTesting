@@ -96,15 +96,11 @@ export default {
   color: #333;
 }
 
-<<<<<<< HEAD
-.el-menu-item{
-=======
 .el-scrollbar__wrap {
   overflow-x: hidden;
 }
 
 .el-menu-item {
->>>>>>> 2d30260a087d91b03e80289840ac7763a74b638a
   text-align: left;
 }
 
