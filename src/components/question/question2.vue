@@ -1,10 +1,10 @@
 <template>
   <div style="margin-left: 50px;margin-right:50px;text-align: left;width: 100%;">
     <div style="width: 250px;">
-      <h1>Question2: 电脑销售系统</h1>
+      <h1>Question2: 电信收费问题</h1>
       <el-upload
           class="upload-demo"
-          action="http://localhost:5000/question2"
+          action="http://imsty.cn:5000/question2"
           :on-preview="handlePreview"
           :on-remove="handleRemove"
           :before-remove="beforeRemove"
