@@ -2,7 +2,7 @@
 
  <div class='container'>
    <el-container>
-    <el-header>三角形测试问题</el-header>
+    <el-header> <h3>三角形测试问题</h3></el-header>
     <el-footer>
       <el-form ref="form" :model="form" label-width="80px">
         <el-form-item label="edge1" class="input-text">
@@ -17,7 +17,7 @@
         <el-form-item>
           <el-upload 
             :action="uploadActionUrl"
-            accept="image/jpeg,image/gif,image/png"
+            accept="csv"
             multiple
             :limit="3"
             :on-exceed="handleExceed">
