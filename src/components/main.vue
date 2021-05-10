@@ -1,7 +1,7 @@
 <template>
   <div class="hello" style="height: 100vh">
     <el-container style="height: 100%">
-      <el-header style="">
+      <el-header style="height: 8%">
         <el-dropdown>
           <i class="el-icon-setting" style="margin-right: 15px"></i>
           <el-dropdown-menu slot="dropdown">
