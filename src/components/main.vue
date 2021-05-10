@@ -101,9 +101,3 @@ export default {
   text-align: left;
 }
 </style>
-
-<style>
-  .el-scrollbar__wrap {
-    overflow-x: hidden;
-  }
-</style>
