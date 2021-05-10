@@ -14,7 +14,8 @@
       </el-header>
       <el-container style="height: 92%; border: 0px solid #eee">
         <el-aside width="250px" style="background-color: #3c3f41;">
-          <el-scrollbar style="height: 100%;">
+          <div>
+          <el-scrollbar style="height: 100%; ">
             <el-menu background-color="#3c3f41" active-text-color="#5fc0f7" :default-openeds="['1','2']" text-color="white">
               <el-submenu index="1">
                 <template slot="title"><i class="el-icon-message"></i>练习题</template>
@@ -34,6 +35,7 @@
 
             </el-menu>
           </el-scrollbar>
+          </div>
         </el-aside>
 
         <router-view></router-view>
@@ -89,10 +91,6 @@ export default {
   color: #333;
 }
 
-.el-scrollbar__wrap{
-
-}
-
 .el-menu-item{
   text-align: left;
 }
@@ -100,4 +98,10 @@ export default {
 .el-submenu{
   text-align: left;
 }
+</style>
+
+<style>
+  .el-scrollbar__wrap {
+    overflow-x: hidden;
+  }
 </style>
