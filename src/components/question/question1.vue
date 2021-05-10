@@ -1,4 +1,5 @@
 <template>
+
  <div class='container'>
    <el-container>
     <el-header>三角形测试问题</el-header>
@@ -30,6 +31,7 @@
     </el-footer>
    </el-container>
  </div>
+
 </template>
 <script>
 export default {

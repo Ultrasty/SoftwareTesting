@@ -26,15 +26,16 @@
                   <el-menu-item index="1-4" @click="q4" style="padding-left: 25px;">4.	万年历问题</el-menu-item>
                 </el-menu-item-group>
 
-              </el-submenu>
 
-              <el-submenu index="2">
-                <template slot="title"><i class="el-icon-menu"></i>项目</template>
+                </el-submenu>
 
-              </el-submenu>
+                <el-submenu index="2">
+                  <template slot="title"><i class="el-icon-menu"></i>项目</template>
 
+                </el-submenu>
             </el-menu>
           </el-scrollbar>
+
           </div>
         </el-aside>
 
@@ -62,18 +63,18 @@ export default {
       tableData: Array(20).fill(item)
     }
   },
-  methods:{
-    q1:function(){
-      window.location='#/question1'
+  methods: {
+    q1: function () {
+      window.location = '#/question1'
     },
-    q2:function(){
-      window.location='#/question2'
+    q2: function () {
+      window.location = '#/question2'
     },
-    q3:function(){
-      window.location='#/question3'
+    q3: function () {
+      window.location = '#/question3'
     },
-    q4:function(){
-      window.location='#/question4'
+    q4: function () {
+      window.location = '#/question4'
     }
   }
 }
@@ -91,11 +92,19 @@ export default {
   color: #333;
 }
 
+<<<<<<< HEAD
 .el-menu-item{
+=======
+.el-scrollbar__wrap {
+  overflow-x: hidden;
+}
+
+.el-menu-item {
+>>>>>>> 2d30260a087d91b03e80289840ac7763a74b638a
   text-align: left;
 }
 
-.el-submenu{
+.el-submenu {
   text-align: left;
 }
 </style>
