@@ -22,8 +22,8 @@
                   <template slot="title"><i class="el-icon-message"></i>练习题</template>
                   <el-menu-item-group>
                     <el-menu-item index="1-1" @click="q1" style="padding-left: 25px;">1. 判断三角形类型</el-menu-item>
-                    <el-menu-item index="1-2" @click="q2" style="padding-left: 25px;">2. 电脑销售系统</el-menu-item>
-                    <el-menu-item index="1-3" @click="q3" style="padding-left: 25px;">3. 电信收费问题系统</el-menu-item>
+                    <el-menu-item index="1-2" @click="q2" style="padding-left: 25px;">2. 电信收费问题</el-menu-item>
+                    <el-menu-item index="1-3" @click="q3" style="padding-left: 25px;">3. 电脑销售系统</el-menu-item>
                     <el-menu-item index="1-4" @click="q4" style="padding-left: 25px;">4. 万年历问题</el-menu-item>
                   </el-menu-item-group>
 
