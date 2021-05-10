@@ -1,8 +1,8 @@
 <template>
   <div class="hello" style="height: 100vh">
     <el-container style="height: 100%">
-      <el-header style="border-bottom: 1px solid #323232;text-align: right;height: 8%; font-size: 12px">
-        <el-dropdown>
+      <el-header style="">
+          <el-dropdown>
           <i class="el-icon-setting" style="margin-right: 15px"></i>
           <el-dropdown-menu slot="dropdown">
             <el-dropdown-item>查看</el-dropdown-item>
@@ -13,7 +13,7 @@
         <span>XP 极限测试平台</span>
       </el-header>
       <el-container style="height: 92%; border: 0px solid #eee">
-        <el-aside width="250px" style="background-color: #3c3f41;">
+        <el-aside width="250px" style="background-color: #3c3f41; min-height: 100%; height: auto;" class="side-bar">
           <div>
           <el-scrollbar style="height: 100%; ">
             <el-menu background-color="#3c3f41" active-text-color="#5fc0f7" :default-openeds="['1','2']" text-color="white">
@@ -25,7 +25,7 @@
                   <el-menu-item index="1-3" @click="q3" style="padding-left: 25px;">3.	电信收费问题系统</el-menu-item>
                   <el-menu-item index="1-4" @click="q4" style="padding-left: 25px;">4.	万年历问题</el-menu-item>
                 </el-menu-item-group>
-
+  
 
                 </el-submenu>
 
@@ -35,8 +35,7 @@
                 </el-submenu>
             </el-menu>
           </el-scrollbar>
-
-          </div>
+        </div>
         </el-aside>
 
         <router-view></router-view>
@@ -82,7 +81,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 .el-header {
+  border-bottom: 1px solid #323232;
+  text-align: right;
+  width: 100%;
+  z-index: 1;
+  font-size: 12px ;
   background-color: #0078d5;
   color: white;
   line-height: 60px;
