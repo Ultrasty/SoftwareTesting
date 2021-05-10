@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import VueRouter from "vue-router";
-import Content from '../components/conponent'
 import Main from '../components/main'
 import question1 from "../components/question/question1";
 import question2 from "../components/question/question2";
@@ -12,7 +11,7 @@ export default new VueRouter({
             {
                 path: '/content',
                 name: 'component',
-                component: Content
+                component: question1
             },
             {
                 path: '/',

@@ -20,7 +20,7 @@
                 <template slot="title"><i class="el-icon-message"></i>导航一</template>
                 <el-menu-item-group>
                   <template slot="title">分组一</template>
-                  <el-menu-item index="1-1">选项1</el-menu-item>
+                  <el-menu-item index="1-1" id="q1" @click="q1">选项1</el-menu-item>
                   <el-menu-item index="1-2">选项2</el-menu-item>
                 </el-menu-item-group>
                 <el-menu-item-group title="分组2">
@@ -67,7 +67,7 @@
 
 
         <router-view></router-view>
-
+        <router-view></router-view>
 
       </el-container>
     </el-container>
@@ -75,6 +75,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'HelloWorld',
   props: {
@@ -88,6 +89,11 @@ export default {
     };
     return {
       tableData: Array(20).fill(item)
+    }
+  },
+  methods:{
+    q1:function(){
+      window.location='#/question1'
     }
   }
 }
