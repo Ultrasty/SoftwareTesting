@@ -2,7 +2,7 @@
 
  <div class='container'>
    <el-container>
-    <el-header class='header'> <h3>三角形测试问题</h3></el-header>
+    <el-header class='header'> <h1>Question1:判断三角形类型</h1></el-header>
     <el-footer>
       <div class="single">
         <h4>单个测试</h4>
@@ -105,15 +105,12 @@ export default {
 
 <style scoped>
 .container{
-  margin-top: 100px;
-  position: absolute;
-  left: 60%;
-  transform: translate(-50%, 0); /*元素向上向左移动元素高宽的50%，使元素中心在正中*/
+  width: 1000px;
 }
 .header{
-  margin-left: 40px;
+
   margin-bottom: 30px;
-  text-align: center;
+  text-align: left;
 }
 .single{
   margin-bottom: 50px;
@@ -125,6 +122,7 @@ export default {
   margin-bottom: 100px;
   display: inline;
   float: right;
+  padding-right: 200px;
 }
 .upload-demo {
   margin-top: 50px;

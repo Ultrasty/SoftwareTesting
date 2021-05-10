@@ -13,7 +13,7 @@
         <span>XP 极限测试平台</span>
       </el-header>
       <el-container style="height: 92%; border: 0px solid #eee">
-        <el-aside width="250px" style="background-color: #3c3f41; min-height: 100%; height: auto;" class="side-bar">
+        <el-aside width="15%" style="background-color: #3c3f41; min-height: 100%; height: auto;" class="side-bar">
           <div>
             <el-scrollbar style="height: 100%; ">
               <el-menu background-color="#3c3f41" active-text-color="#5fc0f7" :default-openeds="['1','2']"
