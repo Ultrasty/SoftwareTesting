@@ -2,69 +2,82 @@
 
  <div class='container'>
    <el-container>
-    <el-header class='header'> <h1>Question1:判断三角形类型</h1></el-header>
-    <el-footer>
-      <div class="single">
-        <h4>单个测试</h4>
-        <el-form ref="form" :model="form" label-width="80px" class="input-form">
-          <el-form-item label="edge1" class="input-text">
-            <el-input v-model="form.edge1"></el-input>
-          </el-form-item>
-          <el-form-item label="edge2" class="input-text">
-            <el-input v-model="form.edge2"></el-input>
-          </el-form-item>
-          <el-form-item label="edge3" class="input-text">
-            <el-input v-model="form.edge3"></el-input>
-          </el-form-item>
-          <el-form-item class="button">
-            <el-button type="primary" @click="onSubmit">提交</el-button>
-            <el-button @click="onClear">清空</el-button>
-          </el-form-item>
-        </el-form>
-      </div>
-      <div class="batch">
-        <h4>批量测试</h4>
-        <el-upload
-          class="upload-demo"
-          action="https://jsonplaceholder.typicode.com/posts/"
-          :on-preview="handlePreview"
-          :on-remove="handleRemove"
-          :before-remove="beforeRemove"
-          multiple
-          :limit="3"
-          :on-exceed="handleExceed"
-          :file-list="fileList">
-          <el-button size="small" type="primary">上传测试用例</el-button>
-          <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
-        </el-upload>
-      </div>
+    <h1 style="font-size:18px" class="header">Question1:判断三角形类型</h1>
+    <el-footer style="margin-left: 30px">
+       <el-tabs v-model="activeName" type="border-card" @tab-click="handleClick" style="width: 70%; height: 350px">
+        <el-tab-pane label="单个测试" name="first">
+          <h4>单个测试</h4>
+          <el-form ref="form" :model="form" label-width="80px" class="input-form">
+            <el-form-item label="edge1" class="input-text">
+              <el-input v-model="form.edge1"></el-input>
+            </el-form-item>
+            <el-form-item label="edge2" class="input-text">
+              <el-input v-model="form.edge2"></el-input>
+            </el-form-item>
+            <el-form-item label="edge3" class="input-text">
+              <el-input v-model="form.edge3"></el-input>
+            </el-form-item>
+            <el-form-item class="button">
+              <el-button type="primary" @click="onSubmit">提交</el-button>
+              <el-button @click="onClear">清空</el-button>
+            </el-form-item>
+          </el-form>
+        </el-tab-pane>
+        <el-tab-pane label="批量测试" name="second">
+          <h4>批量测试</h4>
+          <el-upload
+            class="upload-demo"
+            action="https://jsonplaceholder.typicode.com/posts/"
+            :on-preview="handlePreview"
+            :on-remove="handleRemove"
+            :before-remove="beforeRemove"
+            multiple
+            :limit="3"
+            :on-exceed="handleExceed"
+            :file-list="fileList">
+            <el-button size="small" type="primary">上传测试用例</el-button>
+            <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+          </el-upload>
+        </el-tab-pane>
+      </el-tabs>
+     
       <div>
-      <el-table
+        <el-table
           :data="tableData"
           stripe
           style="width: 100%">
-        <el-table-column
-            prop="date"
-            label="序号"
-            width="180">
-        </el-table-column>
-        <el-table-column
-            prop="name"
-            label="输入"
-            width="180">
-        </el-table-column>
-        <el-table-column
-            prop="address"
-            label="预期输出">
-        </el-table-column>
-        <el-table-column
-            label="实际输出">
-        </el-table-column>
-        <el-table-column
-            label="是否通过">
-        </el-table-column>
+          <el-table-column
+              prop="date"
+              label="序号"
+              width="180">
+          </el-table-column>
+          <el-table-column
+              prop="name"
+              label="输入第一条边"
+              width="180">
+          </el-table-column>
+          <el-table-column
+              prop="name"
+              label="输入第二条边"
+              width="180">
+          </el-table-column>
+          <el-table-column
+              prop="name"
+              label="输入第三条边"
+              width="180">
+          </el-table-column>
+          <el-table-column
+              prop="address"
+              label="预期输出">
+          </el-table-column>
+          <el-table-column
+              label="实际输出">
+          </el-table-column>
+          <el-table-column
+              label="是否通过">
+          </el-table-column>
 
-      </el-table>
+        </el-table>
     </div>
     </el-footer>
    </el-container>
@@ -104,25 +117,10 @@ export default {
 </script>
 
 <style scoped>
-.container{
-  width: 1000px;
-}
 .header{
-
+  margin-left: 50px;
   margin-bottom: 30px;
   text-align: left;
-}
-.single{
-  margin-bottom: 50px;
-  display: inline;
-  float: left;
-}
-
-.batch{
-  margin-bottom: 100px;
-  display: inline;
-  float: right;
-  padding-right: 200px;
 }
 .upload-demo {
   margin-top: 50px;
