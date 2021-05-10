@@ -29,19 +29,23 @@
         </el-table-column>
         <el-table-column
             prop=1
-            label="输入"
+            label="本月通话的分钟数"
             width="180">
         </el-table-column>
         <el-table-column
             prop=2
-            label="预期输出">
+            label="通话时间段的最大容许不按时缴费次数">
         </el-table-column>
         <el-table-column
             prop=3
-            label="实际输出">
+            label="预期输出">
         </el-table-column>
         <el-table-column
             prop=4
+            label="实际输出">
+        </el-table-column>
+        <el-table-column
+            prop=5
             label="是否通过">
         </el-table-column>
 
