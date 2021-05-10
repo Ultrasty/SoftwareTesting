@@ -1,5 +1,5 @@
 <template>
-<div>欢迎使用极限测试平台！</div>
+<div style="width: 100%;height: 100%;background-color: #ebebeb;">欢迎使用极限测试平台！</div>
 </template>
 
 <script>
