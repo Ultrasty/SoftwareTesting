@@ -103,8 +103,35 @@ export default {
     }
   },
   methods: {
-    onClick() {
-      console.log('提交')
+    onClick(form) {
+      console.log(a)
+      var a = parseFloat(this.form.edge1)
+      var b = parseFloat(this.form.edge2)
+      var c = parseFloat(this.form.edge3)
+      console.log(a)
+      if (a < 0)
+          this.$message.warning ("a不能为0")
+      if (b < 0)
+          this.$message.warning ("b不能为0")
+      if (c < 0)
+          this.$message.warning ("c不能为0")
+      if (a >= 800)
+          this.$message.warning ("a不在取值范围内")
+      if (b >= 800)
+          this.$message.warning ("b不在取值范围内")
+      if (c >= 800)
+          this.$message.warning ("c不在取值范围内")
+      if (a + c > b && a + b > c && b + c > a)
+      {
+          if (a == b && b == c)
+              this.$message.warning ("等边三角形")
+          else if( a == b || b == c || a == c)
+              this.$message.warning ("等腰三角形")
+          else
+              this.$message.warning ("普通三角形")
+      }
+      else
+          this.$message.warning ("不是三角形")
     },
     handleRemove(file, fileList) {
       console.log(file, fileList);
