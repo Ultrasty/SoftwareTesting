@@ -4,7 +4,7 @@
    <el-container>
     <h1 style="font-size:18px" class="header">Question1:判断三角形类型</h1>
     <el-footer style="margin-left: 30px">
-       <el-tabs v-model="activeName" type="border-card" @tab-click="handleClick" style="width: 70%; height: 350px">
+       <el-tabs type="border-card" style="width: 70%; height: 350px">
         <el-tab-pane label="单个测试" name="first">
           <h4>单个测试</h4>
           <el-form ref="form" :model="form" label-width="80px" class="input-form">
@@ -18,8 +18,7 @@
               <el-input v-model="form.edge3"></el-input>
             </el-form-item>
             <el-form-item class="button">
-              <el-button type="primary" @click="onSubmit">提交</el-button>
-              <el-button @click="onClear">清空</el-button>
+              <el-button type="primary" @click="onClick">提交</el-button>
             </el-form-item>
           </el-form>
         </el-tab-pane>
@@ -34,6 +33,7 @@
             multiple
             :limit="3"
             :on-exceed="handleExceed"
+            :on-success="Success"
             :file-list="fileList">
             <el-button size="small" type="primary">上传测试用例</el-button>
             <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
@@ -91,6 +91,8 @@ export default {
   data() {
     return {
       uploadActionUrl:'',
+      tableData: [],
+      fileList: [],
       form: {
         edge1: '',
         edge2: '',
@@ -99,6 +101,9 @@ export default {
     }
   },
   methods: {
+    onClick() {
+      console.log('提交')
+    },
     handleRemove(file, fileList) {
       console.log(file, fileList);
     },
@@ -111,7 +116,10 @@ export default {
     // eslint-disable-next-line no-unused-vars
     beforeRemove(file, fileList) {
       return this.$confirm(`确定移除 ${file.name}？`);
-    }
+    },
+    Success(response, file, fileList) {
+      this.tableData = response;
+    },
   }
 }
 </script>
