@@ -4,7 +4,7 @@
    <el-container>
     <h1 style="font-size:18px" class="header">Question1:判断三角形类型</h1>
     <el-footer style="margin-left: 30px">
-       <el-tabs v-model="activeName" type="border-card" @tab-click="handleClick" style="width: 70%; height: 350px">
+       <el-tabs type="border-card" style="width: 70%; height: 350px">
         <el-tab-pane label="单个测试" name="first">
           <h4>单个测试</h4>
           <el-form ref="form" :model="form" label-width="80px" class="input-form">
@@ -18,8 +18,8 @@
               <el-input v-model="form.edge3"></el-input>
             </el-form-item>
             <el-form-item class="button">
-              <el-button type="primary" @click="onSubmit">提交</el-button>
-              <el-button @click="onClear">清空</el-button>
+              <el-button type="primary" >提交</el-button>
+              <el-button >清空</el-button>
             </el-form-item>
           </el-form>
         </el-tab-pane>
