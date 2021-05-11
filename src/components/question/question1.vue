@@ -28,7 +28,7 @@
           <h4>批量测试</h4>
           <el-upload
             class="upload-demo"
-            action="http://imsty.cn:5000/question1"
+            action="http://localhost:5000/question1"
             :on-preview="handlePreview"
             :on-remove="handleRemove"
             :before-remove="beforeRemove"
