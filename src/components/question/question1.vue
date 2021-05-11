@@ -27,16 +27,17 @@
           <h4>批量测试</h4>
           <el-upload
             class="upload-demo"
-            action="https://jsonplaceholder.typicode.com/posts/"
+            action="http://imsty.cn:5000/question1"
             :on-preview="handlePreview"
             :on-remove="handleRemove"
             :before-remove="beforeRemove"
             multiple
-            :limit="3"
+            :limit="100"
             :on-exceed="handleExceed"
+            :on-success="Success"
             :file-list="fileList">
             <el-button size="small" type="primary">上传测试用例</el-button>
-            <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+            <div slot="tip" class="el-upload__tip">只能csv文件，且不超过500kb</div>
           </el-upload>
         </el-tab-pane>
       </el-tabs>
@@ -47,33 +48,35 @@
           stripe
           style="width: 100%">
           <el-table-column
-              prop="date"
+              prop=0
               label="序号"
               width="180">
           </el-table-column>
           <el-table-column
-              prop="name"
+              prop=1
               label="输入第一条边"
               width="180">
           </el-table-column>
           <el-table-column
-              prop="name"
+              prop=2
               label="输入第二条边"
               width="180">
           </el-table-column>
           <el-table-column
-              prop="name"
+              prop=3
               label="输入第三条边"
               width="180">
           </el-table-column>
           <el-table-column
-              prop="address"
+              prop=4
               label="预期输出">
           </el-table-column>
           <el-table-column
+              prop=5
               label="实际输出">
           </el-table-column>
           <el-table-column
+              prop=6
               label="是否通过">
           </el-table-column>
 
@@ -106,11 +109,15 @@ export default {
       console.log(file);
     },
     handleExceed(files, fileList) {
-      this.$message.warning(`当前限制选择 3 个文件，本次选择了 ${files.length} 个文件，共选择了 ${files.length + fileList.length} 个文件`);
+      this.$message.warning(`当前限制选择 100 个文件，本次选择了 ${files.length} 个文件，共选择了 ${files.length + fileList.length} 个文件`);
     },
     // eslint-disable-next-line no-unused-vars
     beforeRemove(file, fileList) {
       return this.$confirm(`确定移除 ${file.name}？`);
+    },
+    // eslint-disable-next-line no-unused-vars
+    Success(response, file, fileList) {
+      this.tableData = response;
     }
   }
 }
