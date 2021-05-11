@@ -18,8 +18,9 @@
               <el-input v-model="form.edge3"></el-input>
             </el-form-item>
             <el-form-item class="button">
-              <el-button type="primary" >提交</el-button>
-              <el-button >清空</el-button>
+
+              <el-button type="primary" @click="onClick">提交</el-button>
+
             </el-form-item>
           </el-form>
         </el-tab-pane>
@@ -94,6 +95,8 @@ export default {
   data() {
     return {
       uploadActionUrl:'',
+      tableData: [],
+      fileList: [],
       form: {
         edge1: '',
         edge2: '',
@@ -102,6 +105,9 @@ export default {
     }
   },
   methods: {
+    onClick() {
+      console.log('提交')
+    },
     handleRemove(file, fileList) {
       console.log(file, fileList);
     },
@@ -115,6 +121,7 @@ export default {
     beforeRemove(file, fileList) {
       return this.$confirm(`确定移除 ${file.name}？`);
     },
+
     // eslint-disable-next-line no-unused-vars
     Success(response, file, fileList) {
       this.tableData = response;
