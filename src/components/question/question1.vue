@@ -18,7 +18,9 @@
               <el-input v-model="form.edge3"></el-input>
             </el-form-item>
             <el-form-item class="button">
+
               <el-button type="primary" @click="onClick">提交</el-button>
+
             </el-form-item>
           </el-form>
         </el-tab-pane>
@@ -26,7 +28,7 @@
           <h4>批量测试</h4>
           <el-upload
             class="upload-demo"
-            action="http://imsty.cn:5000/question1"
+            action="http://localhost:5000/question1"
             :on-preview="handlePreview"
             :on-remove="handleRemove"
             :before-remove="beforeRemove"
