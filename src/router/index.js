@@ -5,6 +5,7 @@ import question1 from "../components/question/question1";
 import question2 from "../components/question/question2";
 import question3 from "../components/question/question3";
 import question4 from "../components/question/question4";
+import test2 from "../components/test2"
 import welcome from "../components/welcome";
 Vue.use(VueRouter)
 Vue.use(Main)
@@ -12,9 +13,9 @@ Vue.use(Main)
 export default new VueRouter({
         routes: [
             {
-                path: '/content',
+                path: '/component',
                 name: 'component',
-                component: question1
+                component: test2
             },
             {
                 path: '/',
