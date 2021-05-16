@@ -1,5 +1,5 @@
 <template>
-  <div ref="container" class="monaco-editor" style="text-align: left" :style="`height: ${height}px`"></div>
+  <div ref="container" class="monaco-editor" style="text-align: left"></div>
 </template>
 
 <script>
@@ -15,8 +15,7 @@ export default {
       }
     },
     height: {
-      type: Number,
-      default: 800
+
     }
   },
   data() {
@@ -24,10 +23,10 @@ export default {
       // 主要配置
       defaultOpts: {
         value: '', // 编辑器的值
-        theme: 'vs-dark', // 编辑器主题：vs, hc-black, or vs-dark，更多选择详见官网
+        theme: 'vs', // 编辑器主题：vs, hc-black, or vs-dark，更多选择详见官网
         roundedSelection: false, // 右侧不显示编辑器预览框
         autoIndent: true, // 自动缩进
-        language: "html"
+        language: "python"
       }
     }
   },
@@ -41,6 +40,8 @@ export default {
   },
   mounted() {
     this.init()
+    let that = this;
+    setInterval(function (){console.log(that.getVal())},2000)
   },
   methods: {
     init() {
@@ -62,4 +63,21 @@ export default {
   }
 }
 </script>
+<style>
 
+body{
+  height: 100vh;
+}
+
+#app{
+  height: 100%;
+}
+
+.monaco-editor{
+  height: 100%;
+}
+
+.rename-box{
+  display: none;
+}
+</style>
